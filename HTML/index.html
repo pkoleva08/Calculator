@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+
+<body>
+    
+    <div id="calculator">
+        <div class="screen">
+            <input type="text" id="display" readonly />
+        </div>
+        <div class="buttons">
+            <div class="digits">
+                <div class="row-1">
+                    <button class="digit" onclick="myFunction('1')">1</button>
+                    <button class="digit" onclick="myFunction('2')">2</button>
+                    <button class="digit" onclick="myFunction('3')">3</button>
+                    <button class="operator" onclick="myFunction('+')" darta - op="+">+</button>
+                </div>
+                <div class="row-2">
+                    <button class="digit" onclick="myFunction('4')">4</button>
+                    <button class="digit" onclick="myFunction('5')">5</button>
+                    <button class="digit" onclick="myFunction('6')">6</button>
+                    <button class="operator" onclick="myFunction('-')" darta - op="-">-</button>
+                </div>
+                <div class="row-3">
+                    <button class="digit" onclick="myFunction('7')">7</button>
+                    <button class="digit" onclick="myFunction('8')">8</button>
+                    <button class="digit" onclick="myFunction('9')">9</button>
+                    <button class="operator" onclick="myFunction('*')" data op="*">*</button>
+                </div>
+                <div class="row-0">
+                    <button class="digit" onclick="myFunction('0')">0</button>
+                    <button class="decimal" onclick="myFunction('.')" data-value=".">.</button>
+                    <button class="calculate" onclick="calculate('=')">=</button>
+                    <button class="d" onclick="myFunction('/')" data op="/">/</button>
+                </div>
+            </div>
+
+            <div class="row-5">
+                <button class="sqrt" onclick="sqrt('√')" data op="√">√</button>
+                <button class="percent" onclick="parcent('%')">%</button>
+                <button class="clear" onclick="clearDisplay('C')">C</button>
+                <button class="delete" onclick="backspase('←')">←</button>
+            </div>
+    </div>
+    <script scr="script.js"></script>
+    
+<script>
+    const _display = document.getElementById('display');
+
+    
+function myFunction(value){
+    _display.value += value;
+}
+function calculate(){
+
+    try{
+        display.value = eval(display.value);
+    }catch{
+        display.value = 'Error'
+    }
+}
+function clearDisplay(){
+    display.value = '';
+}
+function backspase(){
+    display.value = display.value.slice(0, -1)
+}
+
+function square(){
+ const value = parseFloat(display.value);
+    if(!isNaN(value)) {
+        display.value = Math.square(value, 2);
+    }else{
+        display.value = 'Error'
+    }
+}
+
+function sqrt(){
+    const value = parseFloat(display.value);
+    if(!isNaN(value)) {
+        display.value = Math.sqrt(value);
+    }else{
+        display.value = 'Error'
+    }
+}
+function parcent(){
+    const value = parseFloat(display.value);
+    if(!isNaN(value)) {
+        display.value = value / 100;
+    }else{
+        display.value = 'Error'
+    }
+
+}
+
+
+</script>
+ 
+</body>
+
+</html>
