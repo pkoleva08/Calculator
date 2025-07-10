@@ -2,16 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
-    
-
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" type="module" defer></script>
 </head>
 
 <body>
-    
     <div id="calculator">
         <div class="screen">
             <input type="text" id="display" readonly />
@@ -19,92 +17,39 @@
         <div class="buttons">
             <div class="digits">
                 <div class="row-1">
-                    <button class="digit" onclick="myFunction('1')">1</button>
-                    <button class="digit" onclick="myFunction('2')">2</button>
-                    <button class="digit" onclick="myFunction('3')">3</button>
-                    <button class="operator" onclick="myFunction('+')" darta - op="+">+</button>
+                    <button id="btn-1" class="digit" data-value="1">1</button>
+                    <button id="btn-2" class="digit" data-value="2">2</button>
+                    <button id="btn-3" class="digit" data-value="3">3</button>
+                    <button id="btn-plus" class="operator" data-op="+">+</button>
                 </div>
                 <div class="row-2">
-                    <button class="digit" onclick="myFunction('4')">4</button>
-                    <button class="digit" onclick="myFunction('5')">5</button>
-                    <button class="digit" onclick="myFunction('6')">6</button>
-                    <button class="operator" onclick="myFunction('-')" darta - op="-">-</button>
+                    <button id="btn-4" class="digit" data-value="4">4</button>
+                    <button id="btn-5" class="digit" data-value="5">5</button>
+                    <button id="btn-6" class="digit" data-value="6">6</button>
+                    <button id="btn-minus" class="operator" data-op="-">-</button>
                 </div>
                 <div class="row-3">
-                    <button class="digit" onclick="myFunction('7')">7</button>
-                    <button class="digit" onclick="myFunction('8')">8</button>
-                    <button class="digit" onclick="myFunction('9')">9</button>
-                    <button class="operator" onclick="myFunction('*')" data op="*">*</button>
+                    <button id="btn-7" class="digit" data-value="7">7</button>
+                    <button id="btn-8" class="digit" data-value="8">8</button>
+                    <button id="btn-9" class="digit" data-value="9">9</button>
+                    <button id="btn-multypl" class="operator" data-op="*">*</button>
                 </div>
                 <div class="row-0">
-                    <button class="digit" onclick="myFunction('0')">0</button>
-                    <button class="decimal" onclick="myFunction('.')" data-value=".">.</button>
-                    <button class="calculate" onclick="calculate('=')">=</button>
-                    <button class="d" onclick="myFunction('/')" data op="/">/</button>
+                    <button id="btn-0" class="digit" data-value="0">0</button>
+                    <button id="btn-decimal" class="decimal" data-value=".">.</button>
+                    <button id="btn-result" class="calculate">=</button>
+                    <button id="btn-divide" class="operator" data-op="/">/</button>
                 </div>
             </div>
 
             <div class="row-5">
-                <button class="sqrt" onclick="sqrt('√')" data op="√">√</button>
-                <button class="percent" onclick="parcent('%')">%</button>
-                <button class="clear" onclick="clearDisplay('C')">C</button>
-                <button class="delete" onclick="backspase('←')">←</button>
+                <button id="btn-sqrt" class="sqrt">√</button>
+                <button id="btn-percent" class="percent">%</button>
+                <button id="btn-clear" class="clear">C</button>
+                <button id="btn-delete" class="delete">←</button>
             </div>
+        </div>
     </div>
-    <script scr="script.js"></script>
-    
-<script>
-    const _display = document.getElementById('display');
-
-    
-function myFunction(value){
-    _display.value += value;
-}
-function calculate(){
-
-    try{
-        display.value = eval(display.value);
-    }catch{
-        display.value = 'Error'
-    }
-}
-function clearDisplay(){
-    display.value = '';
-}
-function backspase(){
-    display.value = display.value.slice(0, -1)
-}
-
-function square(){
- const value = parseFloat(display.value);
-    if(!isNaN(value)) {
-        display.value = Math.square(value, 2);
-    }else{
-        display.value = 'Error'
-    }
-}
-
-function sqrt(){
-    const value = parseFloat(display.value);
-    if(!isNaN(value)) {
-        display.value = Math.sqrt(value);
-    }else{
-        display.value = 'Error'
-    }
-}
-function parcent(){
-    const value = parseFloat(display.value);
-    if(!isNaN(value)) {
-        display.value = value / 100;
-    }else{
-        display.value = 'Error'
-    }
-
-}
-
-
-</script>
- 
 </body>
 
 </html>
